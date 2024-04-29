@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "UL_PasswordResetter",
+  "version": "0.1",
+  "description": "Samodejna ponastavitev gesla na isto geslo.",
+  "browser_action": {
+    "default_icon": "UL_passwordReset.png"
+  },
+  "icons": {
+    "48": "UL_passwordReset.png"
+  },
+  "background":{
+    "scripts": ["koda.js"]
+  },
+  "permissions": ["tabs", "<all_urls>"],
+    "content_scripts": [
+    {
+      "matches": ["https://id.uni-lj.si/DigitalnaIdentiteta/PonastavitevGesla"],
+      "js": ["content.js"]
+    }
+  ]
+}
